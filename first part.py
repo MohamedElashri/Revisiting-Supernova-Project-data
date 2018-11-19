@@ -1,32 +1,13 @@
-# hubble.py    AJW, 9/21/13
-'''
-hubble.py
-Sample code to read in SNe data downloaded from the net, 
-plot it, and compare with predictions from BB cosmology.
-'''
+ 11/13/2018
 
-###############################################################
-# import python module packages (these are built into Canopy):
-# numpy has many tools for data analysis. See http://www.numpy.org/
+# Importing packages 
 import numpy as np
-# matplotlib for plots and much more; you'll use it a lot!
 import matplotlib.pyplot as plt 
 
-###############################################################
-# Data from the Supernova Cosmology Probe (SCP) project at LBL:
-# http://supernova.lbl.gov
-#
-# read here about using Type 1a supernovae as "standard candles":
-# http://newscenter.lbl.gov/2009/10/27/evolving-dark-energy/
-# http://www2.lbl.gov/Science-Articles/Archive/sabl/2005/October/04-supernovae.html
 
-# Download the data here, and make sure it is in your "path" so python can find it.
-# http://supernova.lbl.gov/Union/figures/SCPUnion2.1_mu_vs_z.txt
-
-##############
-# read in the table
+# call and read data in the table
 data = np.genfromtxt('SCPUnion2.1_mu_vs_z.txt')
-# pull out the redshifts (zs), magnitudes (mm) and magnitude estimated errors (dm)
+# define redshifts (zs), magnitudes (mm) and magnitude estimated errors (dm)
 zs = data.T[1]
 mm = data.T[2]
 dm = data.T[3]
@@ -34,8 +15,8 @@ dlabel = 'Data'
 
 
 ##############
-# mm is the "distance modulus" - http://en.wikipedia.org/wiki/Distance_modulus
-# from which we can compute the distance in parsecs (pc)
+# mm is the "distance modulus" - revise things on Wikipedia http://en.wikipedia.org/wiki/Distance_modulus
+# We compute the distance in parsecs (pc)
 dpc = 10.**(mm/5.+1.)
 # and in megaparsecs (Mpc)
 dMpc = dpc / 10.**6
@@ -43,10 +24,11 @@ dMpc = dpc / 10.**6
 dMe = 10.**((mm+dm)/5.+1.-6.) - dMpc
 
 ##############
-# the Hubble relation :  d = c*z/H0 , with H0 in km/s/Mpc
+# We us the Hubble relation :  d = c*z/H0 , with H0 in km/s/Mpc
 c = 3.e5   # speed of light in km/s
-# more accurately, the Hubble relation is d = c*z*sqrt(z)/H0
-# so let's estimate H0 from the data; but only for small zs in linear region:
+# For more accurate modeling for Hubble relation, the Hubble relation is d = c*z*sqrt(z)/H0
+# let's estimate H0 from the data; but only for small zs in linear region 
+# we get the best value compared with the accepted value now
 indx = np.where(zs < 0.05)
 H0 = (c/dMpc[indx]*zs[indx]).mean()
 #H0 = (c/dMpc[indx]*zs[indx]*np.sqrt(1+zs[indx])).mean()
