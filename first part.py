@@ -1,4 +1,8 @@
- 11/13/2018
+#Initiating work data 11/13/2018
+
+
+
+###############
 # Importing packages 
 import numpy as np
 import matplotlib.pyplot as plt 
