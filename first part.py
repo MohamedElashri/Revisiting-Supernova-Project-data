@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 
 
 # call and read data in the table
-data = np.genfromtxt('/data/SCPUnion2.1_mu_vs_z.txt')
+data = np.genfromtxt('Data/SCPUnion2.1_mu_vs_z.txt')
 # define redshifts (zs), magnitudes (mm) and magnitude estimated errors (dm)
 zs = data.T[1]
 mm = data.T[2]

@@ -35,7 +35,7 @@ def mzz(OmM,OmL,z):
 # http://supernova.lbl.gov/Union/
 # http://arxiv.org/abs/1105.3470
 # wget http://supernova.lbl.gov/Union/figures/SCPUnion2.1_mu_vs_z.txt
-data = np.genfromtxt('/Data/SCPUnion2.1_mu_vs_z.txt')
+data = np.genfromtxt('Data/SCPUnion2.1_mu_vs_z.txt')
 zs = data.T[1]
 mm = data.T[2]
 dm = data.T[3]
