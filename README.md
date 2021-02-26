@@ -1,6 +1,6 @@
 # Revisit Supernovae project data
 
-This project goal was to ermined the likelihood of an accelerating universe and therefore a positive cosmological constant, using data from the redshift of Type Ia supernovae.
+This project goal was to determine the likelihood of an accelerating universe and therefore a positive cosmological constant, using data from the redshift of Type Ia supernovae.
 ### Type Ia supernovae
 
 Type Ia supernovae are very bright standard candles, which makes it possible to calculate their distance to earth from the observed luminosity. Type Ia supernovae are rare in most galaxies. This makes them ideal for project's  measurements. 
