@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 
 
 # call and read data in the table
-data = np.genfromtxt('SCPUnion2.1_mu_vs_z.txt')
+data = np.genfromtxt('/data/SCPUnion2.1_mu_vs_z.txt')
 # define redshifts (zs), magnitudes (mm) and magnitude estimated errors (dm)
 zs = data.T[1]
 mm = data.T[2]
@@ -18,7 +18,7 @@ dlabel = 'Data'
 
 
 ##############
-# mm is the "distance modulus" - revise things on Wikipedia http://en.wikipedia.org/wiki/Distance_modulus
+# mm is the "distance modulus"
 # We compute the distance in parsecs (pc)
 dpc = 10.**(mm/5.+1.)
 # and in megaparsecs (Mpc)
